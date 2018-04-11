@@ -15,6 +15,7 @@ public class Slack {
 
 	private JFrame frmSlackMessenger;
 	private SlackService ss = new SlackService();
+	private String userName = "Vince";
 
 	/**
 	 * Launch the application.
@@ -59,9 +60,9 @@ public class Slack {
 		rdbtnMessageGeneral.setBounds(272, 42, 225, 35);
 		frmSlackMessenger.getContentPane().add(rdbtnMessageGeneral);
 
-		JRadioButton rdbtnMessageVince = new JRadioButton("Message Vince");
-		rdbtnMessageVince.setBounds(497, 42, 201, 35);
-		frmSlackMessenger.getContentPane().add(rdbtnMessageVince);
+		JRadioButton rdbtnMessageMike = new JRadioButton("Message Mike");
+		rdbtnMessageMike.setBounds(497, 42, 201, 35);
+		frmSlackMessenger.getContentPane().add(rdbtnMessageMike);
 
 		JTextArea textArea = new JTextArea();
 		textArea.setBounds(21, 180, 422, 54);
@@ -69,27 +70,33 @@ public class Slack {
 		ButtonGroup group = new ButtonGroup();
 		group.add(rdbtnMessageGeneral);
 		group.add(rdbtnMessageSlack);
-		group.add(rdbtnMessageVince);
+		group.add(rdbtnMessageMike);
 
 		JButton btnSend = new JButton("Send");
 		btnSend.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (rdbtnMessageGeneral.isSelected()) {
-					ss.sendMessage("#general", "Vince", textArea.getText());
+					ss.sendMessage("#integration", userName, textArea.getText());
 					textArea.setText(null);
 					group.clearSelection();
 				}
 				if (rdbtnMessageSlack.isSelected()) {
-					ss.sendMessage("#slack_test", "Vince", textArea.getText());
+					ss.sendMessage("#slack_test", userName, textArea.getText());
 					textArea.setText(null);
 					group.clearSelection();
 				}
-				if (rdbtnMessageVince.isSelected()) {
-					ss.sendMessage("@Vince", "Vince", textArea.getText());
+				/***if (rdbtnMessageVince.isSelected()) {
+					ss.sendMessage("U8Z9AN6G7", "Vince", textArea.getText());
 					textArea.setText(null);
 					group.clearSelection();
 				}
-
+				***/
+				if (rdbtnMessageMike.isSelected()) {
+					ss.sendMessage("U795A112Q", userName, textArea.getText());
+					textArea.setText(null);
+					group.clearSelection();
+				}
+				
 			}
 		});
 		btnSend.setBounds(493, 180, 168, 54);
