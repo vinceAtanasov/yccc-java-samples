@@ -56,7 +56,7 @@ public class Slack {
 		frmSlackMessenger.getContentPane().add(rdbtnMessageSlack);
 
 		JRadioButton rdbtnMessageGeneral = new JRadioButton("Message #general");
-		rdbtnMessageGeneral.setBounds(272, 42, 234, 35);
+		rdbtnMessageGeneral.setBounds(272, 42, 225, 35);
 		frmSlackMessenger.getContentPane().add(rdbtnMessageGeneral);
 
 		JRadioButton rdbtnMessageVince = new JRadioButton("Message Vince");
