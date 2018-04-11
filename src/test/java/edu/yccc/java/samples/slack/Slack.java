@@ -46,7 +46,7 @@ public class Slack {
 	private void initialize() {
 		frmSlackMessenger = new JFrame();
 		frmSlackMessenger
-				.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\velik\\Desktop\\Slack_Icon.png"));
+				.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\velik\\git\\slack-integration\\Slack_Icon.png"));
 		frmSlackMessenger.setTitle("Slack Messenger");
 		frmSlackMessenger.setBounds(100, 100, 800, 326);
 		frmSlackMessenger.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
