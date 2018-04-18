@@ -56,6 +56,7 @@ public class Slack {
 	 */
 	private void initialize() {
 		frmSlackMessenger = new JFrame();
+		// Setting up the icon on the application window.
 		frmSlackMessenger.setIconImage(Toolkit.getDefaultToolkit().getImage("Slack_Icon.png"));
 		frmSlackMessenger.setTitle("Slack Messenger");
 		frmSlackMessenger.setBounds(100, 100, 800, 326);
@@ -84,21 +85,35 @@ public class Slack {
 		group.add(rdbtnMessageMike);
 
 		JButton btnSend = new JButton("Send");
+		// Sending the message from the textArea when click on the button.
 		btnSend.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				// Sending the message to #general channel when the rdbtnMessageGeneral is
+				// selected.
 				if (rdbtnMessageGeneral.isSelected()) {
 					ss.sendMessage("#general", userName, textArea.getText());
+					// Clear the textArea after the message is sent.
 					textArea.setText(null);
+					// Clearing the selection from the radio button group.
 					group.clearSelection();
 				}
+				// Sending the message to #slack_test channel when the rdbtnMessageGeneral is
+				// selected.
 				if (rdbtnMessageSlack.isSelected()) {
 					ss.sendMessage("#slack_test", userName, textArea.getText());
+					// Clear the textArea after the message is sent.
 					textArea.setText(null);
+					// Clearing the selection from the radio button group.
 					group.clearSelection();
 				}
+				// Sending direct message to Mike when the rdbtnMessageMike is selected. Note
+				// when you are sending direct message you need to put the user's ID instead of
+				// the user's name.
 				if (rdbtnMessageMike.isSelected()) {
 					ss.sendMessage("U795A112Q", userName, textArea.getText());
+					// Clear the textArea after the message is sent.
 					textArea.setText(null);
+					// Clearing the selection from the radio button group.
 					group.clearSelection();
 				}
 			}
