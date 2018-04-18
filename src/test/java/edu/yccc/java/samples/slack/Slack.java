@@ -11,9 +11,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 /***
- * Maven is a tool, which defines how your .java files will get compiled to .class files and then packaged into .jar files.
- * Jar is a package file format typically used to aggregate many Java class files into one file to distribute application software or libraries on the Java platform.
- *  
+ * Maven is a tool, which defines how your .java files will get compiled to
+ * .class files and then packaged into .jar files. Jar is a package file format
+ * typically used to aggregate many Java class files into one file to distribute
+ * application software or libraries on the Java platform.
+ * 
  * @author Vince
  *
  */
@@ -21,7 +23,8 @@ import java.awt.event.ActionEvent;
 public class Slack {
 
 	private JFrame frmSlackMessenger;
-	// Creating an instance of SlackService object. It will inherit all of the methods from SlackService class.
+	// Creating an instance of SlackService object. It will inherit all of the
+	// methods from SlackService class.
 	private SlackService ss = new SlackService();
 	private String userName = "Vince";
 
