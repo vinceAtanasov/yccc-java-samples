@@ -1,7 +1,6 @@
 package edu.yccc.java.samples.slack;
 
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import java.awt.Toolkit;
 import javax.swing.JRadioButton;
@@ -11,9 +10,18 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/***
+ * Maven is a tool, which defines how your .java files will get compiled to .class files and then packaged into .jar files.
+ * Jar is a package file format typically used to aggregate many Java class files into one file to distribute application software or libraries on the Java platform.
+ *  
+ * @author Vince
+ *
+ */
+
 public class Slack {
 
 	private JFrame frmSlackMessenger;
+	// Creating an instance of SlackService object. It will inherit all of the methods from SlackService class.
 	private SlackService ss = new SlackService();
 	private String userName = "Vince";
 
@@ -45,8 +53,7 @@ public class Slack {
 	 */
 	private void initialize() {
 		frmSlackMessenger = new JFrame();
-		frmSlackMessenger
-				.setIconImage(Toolkit.getDefaultToolkit().getImage("Slack_Icon.png"));
+		frmSlackMessenger.setIconImage(Toolkit.getDefaultToolkit().getImage("Slack_Icon.png"));
 		frmSlackMessenger.setTitle("Slack Messenger");
 		frmSlackMessenger.setBounds(100, 100, 800, 326);
 		frmSlackMessenger.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -67,6 +74,7 @@ public class Slack {
 		JTextArea textArea = new JTextArea();
 		textArea.setBounds(21, 180, 422, 54);
 		frmSlackMessenger.getContentPane().add(textArea);
+		// Creating group for the radio buttons.
 		ButtonGroup group = new ButtonGroup();
 		group.add(rdbtnMessageGeneral);
 		group.add(rdbtnMessageSlack);
@@ -76,7 +84,7 @@ public class Slack {
 		btnSend.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (rdbtnMessageGeneral.isSelected()) {
-					ss.sendMessage("#integration", userName, textArea.getText());
+					ss.sendMessage("#general", userName, textArea.getText());
 					textArea.setText(null);
 					group.clearSelection();
 				}
@@ -85,22 +93,14 @@ public class Slack {
 					textArea.setText(null);
 					group.clearSelection();
 				}
-				/***if (rdbtnMessageVince.isSelected()) {
-					ss.sendMessage("U8Z9AN6G7", "Vince", textArea.getText());
-					textArea.setText(null);
-					group.clearSelection();
-				}
-				***/
 				if (rdbtnMessageMike.isSelected()) {
 					ss.sendMessage("U795A112Q", userName, textArea.getText());
 					textArea.setText(null);
 					group.clearSelection();
 				}
-				
 			}
 		});
 		btnSend.setBounds(493, 180, 168, 54);
 		frmSlackMessenger.getContentPane().add(btnSend);
-
 	}
 }
