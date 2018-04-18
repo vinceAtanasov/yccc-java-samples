@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import edu.yccc.java.samples.slack.SlackService;
+import edu.yccc.cis174.slack.SlackService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

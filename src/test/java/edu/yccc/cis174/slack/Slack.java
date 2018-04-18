@@ -1,4 +1,4 @@
-package edu.yccc.java.samples.slack;
+package edu.yccc.cis174.slack;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;

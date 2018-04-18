@@ -1,4 +1,4 @@
-package edu.yccc.java.samples.slack;
+package edu.yccc.cis174.slack;
 
 import org.springframework.stereotype.Component;
 import net.gpedro.integrations.slack.SlackApi;
